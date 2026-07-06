@@ -21,3 +21,4 @@ class UserResponse(BaseModel):
 class UserNotFoundException(Exception):
     def __init__(self,name:str):
         self.name = name
+
