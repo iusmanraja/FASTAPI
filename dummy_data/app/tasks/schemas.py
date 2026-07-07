@@ -1,24 +1,14 @@
 from pydantic import BaseModel
 
 
-
-class User(BaseModel):
-    name:str
-    age:int
+class TodoCreate(BaseModel):
+    title: str
 
 
-class Users(BaseModel):
-    name:str
-    age:int
-    password:str
+class TodoResponse(BaseModel):
+    id: int
+    title: str
+    completed: bool
 
-
-class UserResponse(BaseModel):
-    name:str
-    age:int
-
-
-class UserNotFoundException(Exception):
-    def __init__(self,name:str):
-        self.name = name
-
+    class Config:
+        from_attributes = True
